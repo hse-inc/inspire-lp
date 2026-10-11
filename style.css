@@ -732,3 +732,30 @@ em, i { font-style: normal; }
 @media (max-height: 620px) { :root { --fv-ph: min(28vw, 10dvh, 130px); } }
 @media (max-height: 760px) { .bokeh--ar .bka:nth-child(7), .bokeh--ar .bka:nth-child(8) { display: none; } }
 .bokeh--ar .bka:nth-child(8) { display: none; }
+
+.page--empathy .page__inner { position: relative; }
+.page--empathy .ttl { max-width: 64%; }
+.emp-mid { grid-template-columns: 1fr 33%; }
+.emp-photos { position: absolute; right: -4px; top: calc(var(--header-h) + var(--lane-h) - .2em); width: 37%; height: 15.5em; min-height: 0; z-index: 2; }
+.ep { background: #fff; padding: 4px; border-radius: 6px; box-shadow: 0 10px 24px rgb(5 20 50 / .32); overflow: visible; }
+.ep img { border-radius: 3px; }
+.ep--1 { right: 0; left: auto; top: 0; bottom: auto; width: 84%; aspect-ratio: 4 / 5; rotate: 4deg; }
+.ep--2 { left: 0; right: auto; top: auto; bottom: 0; width: 66%; aspect-ratio: 4 / 5; rotate: -5deg; }
+
+.ep { opacity: 1; transform: none; clip-path: inset(100% 100% 0 0 round 6px); transition: clip-path .9s cubic-bezier(.65, 0, .35, 1); }
+.ep img { transform: scale(1.15); transition: transform 1.4s cubic-bezier(.22, 1, .36, 1); }
+.ep--2 { transition-delay: .28s; } .ep--2 img { transition-delay: .28s; }
+.emp-photos.is-on .ep { clip-path: inset(-20px -20px -30px -20px round 6px); }
+.emp-photos.is-on .ep img { transform: none; }
+@media (max-height: 620px) { .emp-photos { height: 12.5em; width: 33%; } .page--empathy .ttl { max-width: 66%; } }
+
+.emp-mid { grid-template-columns: 1fr; }
+.page--empathy .voice:first-child { margin-right: 38% !important; }
+.page--empathy .voice:not(:first-child) .voice__in::after { display: none; }
+.emp-photos { height: auto; aspect-ratio: 1 / 1.18; width: 36%; }
+@media (max-height: 620px) { .emp-photos { width: 31%; } .page--empathy .voice:first-child { margin-right: 33% !important; } }
+.emp-photos { top: auto; margin-top: calc(var(--ttl-h, 5.4em) * -1 - .3em); }
+
+.page--empathy .ttl { position: relative; max-width: none; }
+.page--empathy .ttl .emp-photos { position: absolute; top: -.25em; right: -6px; margin: 0; width: 35%; font-size: 1rem; }
+@media (max-height: 620px) { .page--empathy .ttl .emp-photos { width: 30%; } }
