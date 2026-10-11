@@ -846,3 +846,5 @@ em, i { font-style: normal; }
 @media (prefers-reduced-motion: reduce) { .sbk { animation: none; } }
 
 .hb--entry { box-shadow: 0 2px 5px rgb(244 122 54 / .22); }
+
+.fv__big b.fv__e { background-image: linear-gradient(180deg, #3a5a86 0%, #1d304a 50%, #142238 100%), linear-gradient(180deg, #3a5a86 0%, #1d304a 32%, transparent 32% 74%, #1d304a 74%, #142238 100%); }
