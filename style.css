@@ -680,3 +680,26 @@ em, i { font-style: normal; }
 @media (max-height: 620px) { :root { --fv-ph: min(30vw, 11dvh, 140px); } }
 .fv__copy { margin-top: .45em; }
 .ep--2 { top: auto; bottom: 0; width: 64%; right: 30%; } .emp-photos { min-height: 0; } .ep--1 { width: 92%; }
+
+.fv__big b { color: transparent !important; -webkit-background-clip: text; background-clip: text;
+  background-image: linear-gradient(160deg, #3a5a86 0%, #1d304a 55%, #142238 100%); }
+.fv__big b:first-child { background-image: linear-gradient(160deg, #ffb07a 0%, #f47a36 50%, #e0581f 100%); }
+
+.fv__copy > .ln:first-child { color: transparent; -webkit-background-clip: text; background-clip: text;
+  background-image: linear-gradient(100deg, #1d304a 0%, #2f4f7c 100%); }
+
+.fv__copy .rw { background-image: linear-gradient(90deg, transparent 0 50%, #d6dbe2 50% 100%), linear-gradient(100deg, #f47a36 0%, #ff9b5a 55%, #e0581f 100%);
+  background-size: 200% 100%, 100% 100%; background-position: 100% 0, 0 0; background-repeat: no-repeat; }
+.ln.is-on .fv__copy .rw, .fv__copy .ln.is-on .rw { background-position: 0 0, 0 0; }
+
+.fv__big b.fv__e { position: relative; background-image: linear-gradient(90deg, #22385a 0 41%, transparent 41%), linear-gradient(180deg, #3a5a86 0%, #1d304a 42%, transparent 42% 61%, #1d304a 61%, #142238 100%); }
+.e-ar { position: absolute; left: 47%; top: 40.5%; width: 66%; height: 21.5%; background: linear-gradient(90deg, #ff9b5a, #f47a36 60%, #e0581f);
+  clip-path: polygon(0 26%, 58% 26%, 58% 0, 100% 50%, 58% 100%, 58% 74%, 0 74%); }
+.fv__big b.fv__e { background-image: linear-gradient(180deg, #3a5a86 0%, #1d304a 50%, #142238 100%), linear-gradient(180deg, #3a5a86 0%, #1d304a 42%, transparent 42% 61%, #1d304a 61%, #142238 100%);
+  background-size: 41% 100%, 100% 100%; background-repeat: no-repeat; }
+
+.bka { opacity: 0; transform: translate(-14px, 14px) scale(.55); animation: none; transition: opacity .7s ease, transform 1s cubic-bezier(.22, 1, .36, 1); transition-delay: var(--d, 0ms); }
+.page--fv.is-active .bka { opacity: var(--o); transform: none; animation: bk-float var(--t, 9s) ease-in-out 1.8s infinite alternate; }
+.fv__big.is-on b { animation-delay: calc(var(--i) * 90ms + 100ms); }
+.e-ar { transform-origin: 0 50%; transform: scaleX(0); transition: transform .5s cubic-bezier(.34, 1.56, .64, 1) 1.15s; }
+.fv__big.is-on .e-ar { transform: none; }

@@ -37,7 +37,7 @@
   let timers = [];
   const play = (page) => {
     timers.forEach(clearTimeout); timers = [];
-    let t = 250;
+    let t = 250 + (parseInt(page.dataset.delay, 10) || 0);
     const items = [...page.querySelectorAll('.rv')];
     const at = new Map();
     items.forEach((el) => {
