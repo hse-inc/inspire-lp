@@ -779,3 +779,5 @@ em, i { font-style: normal; }
 .fv__photo::before { display: none; }
 .fv__outline { transform: translate(-6px, 6px); }
 .fv__photo.is-on .fv__outline { transform: translate(10px, -8px); }
+
+@media (max-width: 1200px) { .stage-bokeh .sbk:nth-child(8), .stage-bokeh .sbk:nth-child(15) { display: none; } }
