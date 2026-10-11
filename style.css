@@ -771,3 +771,7 @@ em, i { font-style: normal; }
   opacity: 0; transform: none; transition: opacity .4s linear .15s, transform .6s cubic-bezier(.22, 1, .36, 1) .15s; }
 .fv__photo.is-on::before { opacity: 1; transform: translate(-12px, 12px); }
 .fv__photo.is-on::before { transform: translate(-24px, 10px); }
+
+.fv__photo.is-on::before { transform: translate(10px, -8px); }
+.fv__outline { transform: none; }
+.fv__photo.is-on .fv__outline { transform: translate(-24px, 10px); }
