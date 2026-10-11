@@ -57,7 +57,7 @@
   };
   window.__go = go;
 
-  let locked = false, acc = 0, accTimer = null;
+  let locked = false, lastWheel = 0, fresh = true;
   const insideScroll = (target, dy) => {
     const pg = target.closest && target.closest('.page--scroll');
     const box = pg && pg.querySelector('.page__inner');
@@ -73,15 +73,14 @@
     const inside = insideScroll(e.target, e.deltaY);
     if (inside === 'scroll') return;
     e.preventDefault();
-    if (inside === 'hold' || locked) return;
-    acc += e.deltaY;
-    clearTimeout(accTimer);
-    accTimer = setTimeout(() => { acc = 0; }, 220);
-    if (Math.abs(acc) < 12) return;
+    const now = performance.now();
+    if (now - lastWheel > 250) fresh = true;
+    lastWheel = now;
+    if (inside === 'hold' || locked || !fresh || Math.abs(e.deltaY) < 4) return;
+    fresh = false;
     locked = true;
-    go(current + (acc > 0 ? 1 : -1));
-    acc = 0;
-    setTimeout(() => { locked = false; }, 950);
+    go(current + (e.deltaY > 0 ? 1 : -1));
+    setTimeout(() => { locked = false; }, 800);
   }, { passive: false });
 
   let tY = null, tAtEnd = false, tAtTop = false, tBox = null;
@@ -102,9 +101,13 @@
   }, { passive: true });
 
   window.addEventListener('keydown', (e) => {
-    if (e.target.closest('input, textarea, select')) return;
-    if (['ArrowDown', 'PageDown'].includes(e.key)) { e.preventDefault(); go(current + 1); }
-    if (['ArrowUp', 'PageUp'].includes(e.key)) { e.preventDefault(); go(current - 1); }
+    if (e.target.closest('input, textarea, select, button')) return;
+    const down = ['ArrowDown', 'PageDown'].includes(e.key) || (e.key === ' ' && !e.shiftKey);
+    const up = ['ArrowUp', 'PageUp'].includes(e.key) || (e.key === ' ' && e.shiftKey);
+    if (!down && !up) return;
+    e.preventDefault();
+    if (e.repeat) return;
+    go(current + (down ? 1 : -1));
   });
 
   if (next) next.addEventListener('click', (e) => { e.preventDefault(); go(current + 1); });

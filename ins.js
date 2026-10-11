@@ -38,15 +38,16 @@
   const play = (page) => {
     timers.forEach(clearTimeout); timers = [];
     let t = 250 + (parseInt(page.dataset.delay, 10) || 0);
+    const fast = page.id === 'p1';
     const items = [...page.querySelectorAll('.rv')];
     const at = new Map();
     items.forEach((el) => {
       const parent = el.parentElement.closest('.rv');
       if (parent && at.has(parent)) {
-        at.set(el, at.get(parent) + 520);
+        at.set(el, at.get(parent) + (fast ? 320 : 520));
       } else {
         at.set(el, t);
-        t += el.classList.contains('ln') ? 120 : 170;
+        t += el.classList.contains('ln') ? (fast ? 72 : 120) : (fast ? 128 : 170);
       }
     });
     items.forEach((el) => timers.push(setTimeout(() => el.classList.add('is-on'), at.get(el))));
@@ -69,21 +70,4 @@
   build();
   const active = document.querySelector('.page.is-active');
   if (active) onChange({ index: [...document.querySelectorAll('.page')].indexOf(active), page: active });
-})();
-
-(() => {
-  const num = document.querySelector('.fv__num');
-  if (!num) return;
-  let timer = null;
-  document.addEventListener('pagechange', (e) => {
-    clearInterval(timer);
-    num.textContent = '0';
-    if (e.detail.page.id !== 'p1') return;
-    const t0 = performance.now() + 700;
-    timer = setInterval(() => {
-      const k = Math.max(0, Math.min(1, (performance.now() - t0) / 1600));
-      num.textContent = String(Math.round(100 * (1 - Math.pow(1 - k, 3))));
-      if (k >= 1) clearInterval(timer);
-    }, 40);
-  });
 })();
