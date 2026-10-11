@@ -764,3 +764,9 @@ em, i { font-style: normal; }
 .step { transition-duration: .35s, .45s !important; }
 .vband { transition-duration: .4s; } .vband .vband__photo img { transition-duration: 1.1s; }
 .fv__photo, .fv__photo2 { transition-duration: .5s; }
+
+.fv__photo { isolation: isolate; }
+.fv__photo::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(45deg, #e0581f 0%, #f47a36 45%, #ffb07a 100%);
+  clip-path: polygon(100% 0, 100% 70%, 82% 52%, 34% 100%, 0 100%, 0 66%, 48% 18%, 30% 0);
+  opacity: 0; transform: none; transition: opacity .4s linear .15s, transform .6s cubic-bezier(.22, 1, .36, 1) .15s; }
+.fv__photo.is-on::before { opacity: 1; transform: translate(-12px, 12px); }
