@@ -832,3 +832,17 @@ em, i { font-style: normal; }
 @media (max-height: 620px) { :root { --fv-ph: min(26vw, 9.2dvh, 120px); } .shout { margin-top: .5em; } }
 @media (max-height: 620px) { :root { --fv-ph: min(28vw, 10.5dvh, 130px); } .shout { font-size: 1.2em; margin-top: .45em; } }
 @media (max-height: 620px) { .shout { font-size: 1.12em; margin-top: .4em; } }
+
+.fv__photo2 { height: var(--fv-ph) !important; width: auto !important; aspect-ratio: 480 / 596 !important; top: 3px !important; bottom: auto !important; }
+
+.stage-bokeh { display: none; }
+@media (min-width: 900px) {
+  .stage-bokeh { display: block; position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .sbk { position: absolute; display: block; width: var(--w); aspect-ratio: 1; color: var(--c); opacity: var(--o); filter: blur(var(--b)); rotate: var(--r);
+    animation: bk-float var(--t, 12s) ease-in-out infinite alternate; }
+  .sbk svg { display: block; width: 100%; height: 100%; }
+  .stage > .rail, .stage > .column { position: relative; z-index: 1; }
+}
+@media (prefers-reduced-motion: reduce) { .sbk { animation: none; } }
+
+.hb--entry { box-shadow: 0 2px 5px rgb(244 122 54 / .22); }
