@@ -781,3 +781,6 @@ em, i { font-style: normal; }
 .fv__big b { transform: translateX(-.45em); }
 .fv__big.is-on b { animation: up-slide .6s cubic-bezier(.22, 1, .36, 1) both; animation-delay: calc(var(--i) * 55ms + 40ms); }
 .e-ar { transition-delay: .6s; }
+
+.bka, .sbk { filter: none !important; overflow: visible; backface-visibility: hidden; }
+.bka svg, .sbk svg { filter: blur(var(--b)); overflow: visible; }
