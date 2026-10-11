@@ -37,17 +37,16 @@
   let timers = [];
   const play = (page) => {
     timers.forEach(clearTimeout); timers = [];
-    let t = 250 + (parseInt(page.dataset.delay, 10) || 0);
-    const fast = page.id === 'p1';
+    let t = 200 + (parseInt(page.dataset.delay, 10) || 0);
     const items = [...page.querySelectorAll('.rv')];
     const at = new Map();
     items.forEach((el) => {
       const parent = el.parentElement.closest('.rv');
       if (parent && at.has(parent)) {
-        at.set(el, at.get(parent) + (fast ? 320 : 520));
+        at.set(el, at.get(parent) + 300);
       } else {
         at.set(el, t);
-        t += el.classList.contains('ln') ? (fast ? 72 : 120) : (fast ? 128 : 170);
+        t += el.classList.contains('ln') ? 56 : 100;
       }
     });
     items.forEach((el) => timers.push(setTimeout(() => el.classList.add('is-on'), at.get(el))));
