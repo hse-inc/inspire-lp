@@ -759,3 +759,50 @@ em, i { font-style: normal; }
 .page--empathy .ttl { position: relative; max-width: none; }
 .page--empathy .ttl .emp-photos { position: absolute; top: -.25em; right: -6px; margin: 0; width: 35%; font-size: 1rem; }
 @media (max-height: 620px) { .page--empathy .ttl .emp-photos { width: 30%; } }
+
+.hb, .btn { border-radius: 999px !important; }
+.hb { padding-inline: 1.1em; }
+.hb { overflow: hidden; isolation: isolate; }
+.hb--entry { box-shadow: 0 4px 12px rgb(244 122 54 / .3); }
+
+.page--empathy .voices .voice:nth-child(n) .voice__in, .page--empathy .voices .voice:nth-child(n) { rotate: 0deg !important; transform: none !important; translate: 0 0 !important; }
+.page--empathy .voice:first-child { margin-right: 0 !important; }
+.page--empathy .voice__no { display: none; }
+.emp-mid .voices { gap: .55em !important; }
+.emp-mid { margin-top: 1.6em; }
+.page--empathy .voice { display: flex; align-items: flex-end; gap: 8px; }
+.page--empathy .voice::before { content: ""; flex: none; width: 26px; height: 26px; border-radius: 50%;
+  background: rgb(255 255 255 / .22) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='9' r='4' fill='%23fff' fill-opacity='.85'/%3E%3Cpath d='M4 21c1-4.5 4.5-6 8-6s7 1.5 8 6' fill='%23fff' fill-opacity='.85'/%3E%3C/svg%3E") center / 70% no-repeat; }
+.page--empathy .voice__in { display: inline-block !important; border-radius: 14px 14px 14px 4px !important; background: rgb(255 255 255 / .16) !important; border: 0 !important; }
+.page--empathy .voice__in::after { display: none !important; }
+.page--empathy .voices .voice:nth-child(2) { margin-left: 16px !important; }
+.page--empathy .voices .voice:nth-child(3) { margin-left: 32px !important; }
+
+.page--empathy .voices .voice:first-child .voice__in { max-width: 58%; }
+
+.page--empathy .voice { opacity: 0; transition: opacity .5s ease; }
+.page--empathy .voice.is-on { opacity: 1; }
+.page--empathy .voice .voice__in { transform: translateY(8px) !important; transition: transform .6s cubic-bezier(.22, 1, .36, 1) !important; }
+.page--empathy .voice.is-on .voice__in { transform: none !important; }
+.page--empathy .voices .voice:first-child .voice__in { max-width: 50%; }
+
+.emp-photos.is-on .ep { clip-path: inset(-80px -80px -80px -80px round 6px); }
+.emp-photos.is-on .ep--2 { animation: card-a 7s cubic-bezier(.65, 0, .35, 1) 2.6s infinite; }
+.emp-photos.is-on .ep--1 { animation: card-b 7s steps(1, end) 2.6s infinite; }
+@keyframes card-a {
+  0%, 38% { translate: 0 0; z-index: 3; }
+  45%     { translate: 22% -16%; z-index: 3; }
+  46%     { z-index: 1; }
+  54%, 88% { translate: 0 0; z-index: 1; }
+  95%     { translate: 22% -16%; z-index: 1; }
+  96%     { z-index: 3; }
+  100%    { translate: 0 0; z-index: 3; }
+}
+@keyframes card-b { 0% { z-index: 2; } 46% { z-index: 4; } 96% { z-index: 2; } 100% { z-index: 2; } }
+.ep--1 { z-index: 2; } .ep--2 { z-index: 3; }
+@media (prefers-reduced-motion: reduce) { .emp-photos.is-on .ep { animation: none; } }
+
+.page--empathy .ttl .emp-photos { width: 31%; right: -4px; top: -.1em; }
+.emp-mid { margin-top: 2.4em; }
+.page--empathy .voices .voice:first-child .voice__in { max-width: 47%; }
+@media (max-height: 620px) { .page--empathy .ttl .emp-photos { width: 27%; } .emp-mid { margin-top: 1.6em; } }
