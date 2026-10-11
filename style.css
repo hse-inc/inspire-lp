@@ -782,5 +782,10 @@ em, i { font-style: normal; }
 .fv__big.is-on b { animation: up-slide .6s cubic-bezier(.22, 1, .36, 1) both; animation-delay: calc(var(--i) * 55ms + 40ms); }
 .e-ar { transition-delay: .6s; }
 
-.bka, .sbk { filter: none !important; overflow: visible; backface-visibility: hidden; }
+.bka, .sbk { filter: none !important; overflow: visible; }
+
+.bka, .sbk { width: calc(var(--w) * 1.28); margin: calc(var(--w) * -0.14); }
 .bka svg, .sbk svg { filter: blur(var(--b)); overflow: visible; }
+
+.site-header { padding-right: 14px; }
+@media (max-width: 374px) { .site-header { padding-right: 12px; } }
