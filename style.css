@@ -770,3 +770,4 @@ em, i { font-style: normal; }
   clip-path: polygon(100% 0, 100% 70%, 82% 52%, 34% 100%, 0 100%, 0 66%, 48% 18%, 30% 0);
   opacity: 0; transform: none; transition: opacity .4s linear .15s, transform .6s cubic-bezier(.22, 1, .36, 1) .15s; }
 .fv__photo.is-on::before { opacity: 1; transform: translate(-12px, 12px); }
+.fv__photo.is-on::before { transform: translate(-24px, 10px); }
