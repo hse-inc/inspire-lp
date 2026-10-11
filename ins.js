@@ -70,3 +70,20 @@
   const active = document.querySelector('.page.is-active');
   if (active) onChange({ index: [...document.querySelectorAll('.page')].indexOf(active), page: active });
 })();
+
+(() => {
+  const num = document.querySelector('.fv__num');
+  if (!num) return;
+  let timer = null;
+  document.addEventListener('pagechange', (e) => {
+    clearInterval(timer);
+    num.textContent = '0';
+    if (e.detail.page.id !== 'p1') return;
+    const t0 = performance.now() + 700;
+    timer = setInterval(() => {
+      const k = Math.max(0, Math.min(1, (performance.now() - t0) / 1600));
+      num.textContent = String(Math.round(100 * (1 - Math.pow(1 - k, 3))));
+      if (k >= 1) clearInterval(timer);
+    }, 40);
+  });
+})();
