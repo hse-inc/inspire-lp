@@ -806,3 +806,17 @@ em, i { font-style: normal; }
 .emp-mid { margin-top: 2.4em; }
 .page--empathy .voices .voice:first-child .voice__in { max-width: 47%; }
 @media (max-height: 620px) { .page--empathy .ttl .emp-photos { width: 27%; } .emp-mid { margin-top: 1.6em; } }
+
+.page--vision .close { font-size: 1.5em; line-height: 1.5; letter-spacing: .03em; color: var(--color-navy); margin-top: .5em; }
+.page--vision .close .ln { display: block; }
+
+.page--vision .step, .page--vision .step.is-on { color: var(--color-navy) !important; font-family: var(--font-head); font-weight: 800; font-size: 1.08em; }
+
+.vband__sub { width: 31% !important; aspect-ratio: 1; padding: 4px; background: #fff; border-radius: 6px !important; box-shadow: 0 10px 22px rgb(29 48 74 / .22) !important; rotate: 3deg !important; overflow: hidden; bottom: -22px; right: 16px; }
+.vband__sub img { border-radius: 3px; }
+
+.vband__sub { left: auto !important; right: 16px !important; }
+
+.body .ln.rv, .fv__sub .ln.rv, .fv__sign .ln.rv { clip-path: none !important; transform: none !important; opacity: 0; transition: opacity 1s ease !important; }
+.body .ln.rv.is-on, .fv__sub .ln.rv.is-on, .fv__sign .ln.rv.is-on { opacity: 1; }
+.vband__sub { width: 27% !important; bottom: 8px !important; top: auto !important; }
