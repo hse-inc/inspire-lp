@@ -462,3 +462,4 @@ em, i { font-style: normal; }
 
 .fly-ar { right: 6px; bottom: -48px; }
 .floaters--vis .fl--3 { --s: 52px; bottom: -12px; left: -18px; }
+ .vband__sub { right: auto; left: 31%; }
