@@ -820,3 +820,6 @@ em, i { font-style: normal; }
 .body .ln.rv, .fv__sub .ln.rv, .fv__sign .ln.rv { clip-path: none !important; transform: none !important; opacity: 0; transition: opacity 1s ease !important; }
 .body .ln.rv.is-on, .fv__sub .ln.rv.is-on, .fv__sign .ln.rv.is-on { opacity: 1; }
 .vband__sub { width: 27% !important; bottom: 8px !important; top: auto !important; }
+
+.fv__big b.fv__e { background-size: 38.5% 100%, 100% 100%; }
+.e-ar { left: 42%; width: 70%; }
