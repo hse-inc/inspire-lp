@@ -409,3 +409,51 @@ em, i { font-style: normal; }
 @media (max-height: 620px) { .vband { height: 10dvh; margin-bottom: .2em; } .vband__en { font-size: .65em; letter-spacing: .2em; } .page--vision .ttl { margin-bottom: .2em; } }
 @media (max-height: 620px) { .page--vision .page__inner { gap: .55em; justify-content: flex-start; } }
 @media (max-height: 620px) { .vband__sub { width: auto; height: 86%; bottom: 7%; } .page--vision .page__inner { justify-content: center; } }
+
+:root { --fv-ph: min(46vw, 22dvh, 230px); --fv-big: min(22vw, 106px); }
+.fv__top { height: calc(var(--fv-ph) + var(--fv-big) * .86); }
+.fv__photo { width: var(--fv-ph); }
+.fv__photo2 { width: min(28vw, 13dvh, 130px); top: 2%; }
+.fv__big { font-size: var(--fv-big); }
+.fv__top { height: calc(var(--fv-ph) + var(--fv-big) * .98); }
+
+.fv__top { flex: none; }
+:root { --fv-ph: min(42vw, 17dvh, 210px); }
+
+.voices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; align-items: end; margin: .4em 0 1em; }
+.voice { margin: 0 !important; padding: 0; }
+.voice:nth-child(1) { margin-top: 2.6em !important; }
+.voice:nth-child(2) { margin-top: 1.3em !important; }
+.voice__in {
+  position: relative; display: flex; align-items: center; min-height: 8.6em; padding: 1.1em .7em .9em .8em; box-sizing: border-box;
+  font-family: "Zen Kurenaido", var(--font-body); font-size: 1em; line-height: 1.5; color: #fff; text-align: left; word-break: auto-phrase;
+  background: #3e5f8c; border-radius: 4px; clip-path: none; rotate: -7deg;
+}
+
+.voice__in::after { content: ""; display: block; position: absolute; right: -10px; top: -12px; width: 30px; height: 30px; background: inherit;
+  clip-path: polygon(100% 0, 100% 100%, 0 0); border-radius: 0; }
+.voice:nth-child(2) .voice__in { background: rgb(255 255 255 / .18); rotate: -5deg; }
+.voice:nth-child(3) .voice__in { background: var(--color-orange); rotate: -8deg; }
+
+.voice { opacity: 0; transform: translate(-18px, 26px); transition: opacity .4s linear, transform .7s cubic-bezier(.34, 1.56, .64, 1); }
+.voice.is-on { opacity: 1; transform: none; }
+.voice.is-on .voice__in { animation: flag-wave 4.5s ease-in-out infinite alternate; }
+@keyframes flag-wave { 0% { transform: translate(0, 0) skewY(0); } 100% { transform: translate(2px, -5px) skewY(-1.5deg); } }
+
+:root { --fv-ph: min(40vw, 16dvh, 200px); }
+
+.voice__in { clip-path: polygon(0 0, 78% 0, 100% 50%, 78% 100%, 0 100%, 9% 50%); border-radius: 0; padding: 1em 1.7em 1em 1.05em; min-height: 7.8em; }
+.voice__in::after { display: none; }
+.voice:nth-child(1) .voice__in { rotate: -14deg; }
+.voice:nth-child(2) .voice__in { rotate: -14deg; }
+.voice:nth-child(3) .voice__in { rotate: -14deg; }
+.voice:nth-child(1) { margin-top: 0 !important; translate: 0 2.4em; }
+.voice:nth-child(2) { margin-top: 0 !important; translate: 0 1.2em; }
+.voice:nth-child(3) { translate: 0 0; }
+.voices { margin-bottom: 2.4em; column-gap: 2px; }
+.voice__in { padding: .95em 2.5em .95em 1.15em; font-size: .94em; line-height: 1.45; min-height: 8.2em; }
+.voice__in { font-size: .86em; padding-right: 2.6em; }
+@media (max-height: 620px) { :root { --fv-ph: min(34vw, 13dvh, 160px); --fv-big: min(18vw, 84px); } .fv__photo2 { width: min(22vw, 10dvh, 100px); } }
+@media (max-height: 620px) { .page--fv .page__inner { gap: .6em; } }
+@media (max-height: 620px) { :root { --fv-ph: min(32vw, 11.5dvh, 150px); } }
+@media (max-height: 620px) { .page--fv .page__inner { justify-content: flex-start; padding-top: calc(var(--header-h) + var(--lane-h)); } }
