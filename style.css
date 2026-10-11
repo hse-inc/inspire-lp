@@ -823,3 +823,12 @@ em, i { font-style: normal; }
 
 .fv__big b.fv__e { background-size: 38.5% 100%, 100% 100%; }
 .e-ar { left: 42%; width: 70%; }
+
+.ln.is-on .shout { animation: none !important; }
+.ln:not(.is-on) .shout { opacity: 1; }
+.shout { margin-top: .75em; }
+
+:root { --fv-ph: min(33vw, 12.6dvh, 165px); }
+@media (max-height: 620px) { :root { --fv-ph: min(26vw, 9.2dvh, 120px); } .shout { margin-top: .5em; } }
+@media (max-height: 620px) { :root { --fv-ph: min(28vw, 10.5dvh, 130px); } .shout { font-size: 1.2em; margin-top: .45em; } }
+@media (max-height: 620px) { .shout { font-size: 1.12em; margin-top: .4em; } }
