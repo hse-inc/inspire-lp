@@ -781,3 +781,8 @@ em, i { font-style: normal; }
 .fv__photo.is-on .fv__outline { transform: translate(10px, -8px); }
 
 @media (max-width: 1200px) { .stage-bokeh .sbk:nth-child(8), .stage-bokeh .sbk:nth-child(15) { display: none; } }
+
+@keyframes up-slide { 0% { opacity: 0; transform: translateX(-.45em); } 60% { opacity: 1; } 100% { opacity: 1; transform: none; } }
+.fv__big b { transform: translateX(-.45em); }
+.fv__big.is-on b { animation: up-slide .6s cubic-bezier(.22, 1, .36, 1) both; animation-delay: calc(var(--i) * 55ms + 40ms); }
+.e-ar { transition-delay: .6s; }
