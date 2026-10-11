@@ -587,3 +587,16 @@ em, i { font-style: normal; }
 .bg-graph__area { transform-origin: 100% 100%; transform: scaleY(.6); transition: opacity .9s ease .2s, transform 1.2s cubic-bezier(.22, 1, .36, 1) .2s; }
 .bg-graph.is-on .bg-graph__area { transform: none; }
 @media (max-height: 620px) { .emp-photo { width: 18%; } }
+
+.fv__mark { display: none !important; }
+.fv__big b { display: inline-block; opacity: 0; transform: translateY(.6em) scale(.4); clip-path: none !important; transition: none !important; transform-origin: 50% 100%; }
+.fv__big.is-on b { animation: up-pop .9s cubic-bezier(.3, 0, .3, 1) both; animation-delay: calc(var(--i) * 90ms + 150ms); }
+@keyframes up-pop {
+  0%   { opacity: 0; transform: translateY(.6em) scale(.4, .3); }
+  30%  { opacity: 1; transform: translateY(-.32em) scale(.9, 1.15); }
+  48%  { transform: translateY(0) scale(1.12, .84); }
+  64%  { transform: translateY(-.12em) scale(.97, 1.05); }
+  80%  { transform: translateY(0) scale(1.03, .97); }
+  100% { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { .fv__big.is-on b { animation: none; opacity: 1; transform: none; } }
