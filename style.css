@@ -703,3 +703,32 @@ em, i { font-style: normal; }
 .fv__big.is-on b { animation-delay: calc(var(--i) * 90ms + 100ms); }
 .e-ar { transform-origin: 0 50%; transform: scaleX(0); transition: transform .5s cubic-bezier(.34, 1.56, .64, 1) 1.15s; }
 .fv__big.is-on .e-ar { transform: none; }
+
+.shout { display: inline-block; font-weight: 700; font-size: 1.36em; letter-spacing: .02em; line-height: 1.4; color: var(--color-navy); white-space: nowrap; transform-origin: 0 100%; }
+.shout__q { font-family: var(--font-head); font-weight: 800; color: var(--color-orange); font-size: 1.18em; }
+.shout__q:first-child { margin-left: -.42em; }
+.ln.is-on .shout { animation: up-pop .9s cubic-bezier(.3, 0, .3, 1) both .1s; }
+.ln:not(.is-on) .shout { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .ln.is-on .shout { animation: none; } }
+
+.shout { display: block; font-family: var(--font-head); font-weight: 800; font-size: 1.42em; line-height: 1.45; letter-spacing: .03em; color: var(--color-navy); margin-top: .3em; }
+.shout__q { font-family: inherit; font-weight: inherit; color: inherit; font-size: 1em; }
+.shout__q:first-child { margin-left: -.5em; }
+
+.page--empathy .body--close { font-family: var(--font-head); font-weight: 700; font-size: 1.28em; line-height: 1.6; letter-spacing: .03em; color: #fff; }
+.page--empathy .body--close .ln { display: block; }
+.page--empathy .rw { background: none !important; color: inherit !important; -webkit-text-fill-color: currentColor; font-weight: inherit; }
+@media (max-height: 620px) { .shout { font-size: 1.22em; margin-top: .1em; } .page--empathy .body--close { font-size: 1.12em; } }
+
+.page--fv .bg-graph, .page--empathy .bg-graph { display: none; }
+
+.shout { font-size: 1.62em; line-height: 1.35; margin-top: .25em; }
+.page--empathy .body--close { font-size: 1.5em; line-height: 1.5; }
+.emp-mid { margin: .8em 0 1.1em; }
+.page--fv .body + .body { margin-top: .55em; }
+@media (max-height: 620px) { .shout { font-size: 1.32em; } .page--empathy .body--close { font-size: 1.24em; } }
+
+:root { --fv-ph: min(35vw, 13.6dvh, 175px); }
+@media (max-height: 620px) { :root { --fv-ph: min(28vw, 10dvh, 130px); } }
+@media (max-height: 760px) { .bokeh--ar .bka:nth-child(7), .bokeh--ar .bka:nth-child(8) { display: none; } }
+.bokeh--ar .bka:nth-child(8) { display: none; }
