@@ -36,8 +36,8 @@ em, i { font-style: normal; }
 .logo img { display: block; width: 100%; height: auto; }
 .header-nav { display: flex; gap: 6px; }
 .hb {
-  position: relative; display: inline-flex; align-items: center; gap: 4px; height: 34px; padding: 0 12px;
-  font-weight: 700; font-size: 12px; letter-spacing: 0.06em; white-space: nowrap; overflow: hidden; isolation: isolate;
+  position: relative; display: inline-flex; align-items: center; gap: 4px; height: 28px; padding: 0 12px;
+  font-weight: 700; font-size: 13px; letter-spacing: 0.04em; white-space: nowrap; overflow: hidden; isolation: isolate;
   border: 1px solid var(--color-navy); border-radius: 2px; transition: color 300ms linear;
 }
 .hb--req { color: var(--color-navy); background: var(--color-base); }
@@ -655,9 +655,7 @@ em, i { font-style: normal; }
 @media (max-height: 620px) { .page--empathy .ttl .emp-photos { width: 30%; } }
 
 .hb, .btn { border-radius: 999px !important; }
-.hb { padding-inline: 1.1em; }
-.hb { overflow: hidden; isolation: isolate; }
-.hb--entry { box-shadow: 0 4px 12px rgb(244 122 54 / .3); }
+.hb { padding-inline: .8em; }
 
 .page--empathy .voices .voice:nth-child(n) .voice__in, .page--empathy .voices .voice:nth-child(n) { rotate: 0deg !important; transform: none !important; translate: 0 0 !important; }
 .page--empathy .voice:first-child { margin-right: 0 !important; }
@@ -739,13 +737,10 @@ em, i { font-style: normal; }
 }
 @media (prefers-reduced-motion: reduce) { .sbk { animation: none; } }
 
-.hb--entry { box-shadow: 0 2px 5px rgb(244 122 54 / .22); }
-
 .fv__big b.fv__e { background-image: linear-gradient(180deg, #3a5a86 0%, #1d304a 50%, #142238 100%), linear-gradient(180deg, #3a5a86 0%, #1d304a 32%, transparent 32% 74%, #1d304a 74%, #142238 100%); }
 
 .site-header { padding-inline: 23px; }
 .header-nav { gap: 8px; }
-.hb { font-size: 13px; }
 @media (max-width: 374px) { .site-header { padding-inline: 16px; } .logo { width: 118px; } }
 .rail-logo { width: auto; }
 .rail-logo__img { width: 172px; height: auto; }
