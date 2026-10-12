@@ -10,7 +10,7 @@
 .pg-ttl { margin-bottom: .35em; }
 .pg-ttl .ln { display: block; }
 .pg-ttl--big { font-size: 2.15em; line-height: 1.35; }
-.pg-ttl--entry { font-size: 1.7em; text-align: center; margin: .3em 0 .8em; }
+.pg-ttl--entry { font-size: 1.7em; margin: .3em 0 .8em; }
 
 .pg-lead { margin: 0 0 .9em; font-weight: 700; font-size: 1.1em; color: var(--color-orange); }
 .page--pg-dark .pg-lead { color: #ffb07a; }
