@@ -363,7 +363,7 @@
 .page.page--finale { --ph: 30dvh; background: radial-gradient(90% 40% at 100% 100%, rgb(244 122 54 / 0.10) 0%, transparent 65%), linear-gradient(180deg, var(--color-base) 0%, var(--color-sky-pale) 100%); }
 .fn-bg {
   position: absolute;
-  top: calc(var(--header-h) - 1px);
+  top: calc(var(--header-h) + var(--lane-h));   
   left: 0;
   right: 0;
   height: var(--ph);
@@ -378,7 +378,7 @@
 .fn-bg.is-on { opacity: 1; }
 .fn-bg img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 52%; transform: scale(1.12); transition: transform 2.6s var(--ease-out); }
 .fn-bg.is-on img { transform: none; }
-.page--finale .page__inner { align-items: center; justify-content: center; gap: 0.85em; padding-top: calc(var(--header-h) + var(--ph) - 2dvh); text-align: center; }
+.page--finale .page__inner { align-items: center; justify-content: center; gap: 0.85em; padding-top: calc(var(--header-h) + var(--lane-h) + var(--ph) - 2dvh); text-align: center; }
 .page--finale .pg-en { justify-content: center; }
 .fn-ttl { font-size: 2.15em; line-height: 1.32; }
 .fn-hi { color: var(--color-orange); }
@@ -420,7 +420,7 @@
 .fn-list li:nth-child(3) { border-radius: 1.4em; }
 .fn-list li.is-on { opacity: 1; translate: 0 0; }
 @media (max-height: 760px) {
-  .page.page--finale { --ph: 22dvh; }
+  .page.page--finale { --ph: 17dvh; }
   .fn-bg img { object-position: 50% 42%; }
   .fn-ttl { font-size: 1.95em; }
 }
