@@ -1,0 +1,56 @@
+:root {
+  
+  --color-orange: #f47a36;
+  --color-navy: #1d304a;
+  --color-base: #ffffff;
+
+  
+  --color-ink: #1d304a;
+  --color-ink-soft: #55657a;
+  --color-ink-mute: #b9c2ce;
+  --color-line: rgb(29 48 74 / 0.14);
+  --color-grid: rgb(29 48 74 / 0.045);
+  --color-navy-deep: #15243a;
+  --color-navy-mid: #2f4f7c;
+  --color-navy-light: #3a5a86;
+  --color-blue: #2356a4;
+  --color-blue-soft: #2f6fb3;
+  --color-sky: #e4f0fb;
+  --color-sky-pale: #f3f8fd;
+  --color-mist: #eef2f7;
+  --color-navy-tint: #e9edf3;
+  --color-orange-light: #ff9b5a;
+  --color-orange-pale: #ffb07a;
+  --color-orange-deep: #e0581f;
+  --color-orange-tint: #fde4d6;
+  --color-marker: #fcd3bc;
+  --color-on-dark: #ffffff;
+  --color-on-dark-soft: rgb(255 255 255 / 0.74);
+  --color-on-dark-line: rgb(255 255 255 / 0.28);
+  --color-on-dark-fill: rgb(255 255 255 / 0.16);
+  --color-shadow: rgb(29 48 74 / 0.1);
+
+  
+  --font-body: "Zen Kaku Gothic New", "Hiragino Sans", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
+  --font-head: "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-en: "Jost", "Zen Kaku Gothic New", sans-serif;
+  --font-big: "Outfit", "Jost", sans-serif;
+
+  
+  --col: 480px;
+  --header-h: 56px;
+  --lane-h: 46px;
+  --gutter: 23px;
+  
+  --fs-page: clamp(10.5px, min(1.86dvh, 3.15vw), 15.2px);
+
+  
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-back: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (min-height: 741px) {
+  :root { --fs-page: clamp(10.5px, min(1.6dvh, 3.15vw), 15.2px); }
+}
