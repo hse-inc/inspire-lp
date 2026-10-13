@@ -1,0 +1,33 @@
+:root {
+  
+  --color-orange: #f47a36;
+  --color-navy: #1d304a;
+  --color-base: #ffffff;
+
+  
+  --color-ink: #1d304a;
+  --color-ink-soft: #55657a;
+  --color-line: rgb(29 48 74 / 0.14);
+  --color-grid: rgb(29 48 74 / 0.045);
+  --color-navy-deep: #15243a;
+  --color-navy-tint: #e9edf3;
+  --color-orange-tint: #fde4d6;
+  --color-marker: #fcd3bc;
+  --color-on-dark: #ffffff;
+  --color-on-dark-soft: rgb(255 255 255 / 0.74);
+  --color-on-dark-line: rgb(255 255 255 / 0.28);
+
+  
+  --font-body: "Zen Kaku Gothic New", "Hiragino Sans", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
+  --font-head: "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-en: "Jost", "Zen Kaku Gothic New", sans-serif;
+
+  
+  --col: 480px;
+  --header-h: 56px;
+  --lane-h: 46px;
+
+  
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
