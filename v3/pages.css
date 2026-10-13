@@ -286,13 +286,12 @@
 @media (min-height: 701px) and (max-height: 760px) {
   .page.page--job .page__inner { gap: 0.8em; }
 }
-.jb-head { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "main name"; align-items: stretch; gap: 0.8em; }
-.jb-head__main { grid-area: main; display: grid; align-content: end; gap: 0.7em; }
-.jb-name { grid-area: name; display: flex; writing-mode: vertical-rl; font-family: var(--font-head); font-weight: 800; font-size: 1.55em; letter-spacing: 0.16em; line-height: 1.5; }
 
-.jb-name .ln { padding: 0.55em 0.45em; color: var(--color-on-dark); background: var(--color-navy); border-radius: 4px; }
-.jb-name .ln.rv { clip-path: inset(0 0 100% 0 round 4px); transform: translateY(-0.6em); }
-.jb-name .ln.rv.is-on { clip-path: inset(0 round 4px); transform: none; }
+.jb-head { display: flex; flex-direction: column; align-items: flex-start; gap: 0.7em; }
+.jb-head__main { display: contents; }
+.jb-head .pg-en { order: 0; }
+.jb-name { order: 1; }
+.jb-head .ttl { order: 2; }
 .think { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 1.2em; margin-block: 0.4em; }
 .think__photo {
   width: min(9em, 30vw);
@@ -351,7 +350,10 @@
 .j2-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; transform: scale(1.2); transition: transform 1.4s var(--ease-out); }
 .j2-photo.is-on img { transform: none; }
 .page--job2 .pg-en { margin-top: -2.4em; }
-.j2-job .ln { display: inline-block; padding: 0.2em 1em; font-weight: 700; font-size: max(13px, 0.95em); line-height: 1.6; color: var(--color-on-dark); background: var(--color-orange); border-radius: 999px; }
+.j2-job .ln, .jb-name .ln { display: inline-block; padding: 0.2em 1em; font-weight: 700; font-size: max(13px, 0.95em); line-height: 1.6; color: var(--color-on-dark); border-radius: 999px; }
+
+.j2-job .ln { background: var(--color-orange); }
+.jb-name .ln { background: var(--color-navy); }
 .j2-hi { color: var(--color-orange); }
 
 .j2-quote { position: relative; padding: 0.35em 0; font-family: var(--font-head); font-weight: 800; font-size: 1.4em; line-height: 1.4; text-align: center; color: var(--color-on-dark); }
@@ -553,7 +555,7 @@
   .pg-photo--culture { height: 20%; }
   .pg-photo--culture.is-on { opacity: 0.5; }
   .page--culture .cu-case, .page--culture .pg-close { margin-top: 0.35em; }
-  .jb-head__main { row-gap: 0.45em; }
+  .jb-head { gap: 0.45em; }
   .page.page--job .page__inner { gap: 0.7em; }
   .page.page--eval .page__inner { gap: 0.5em; }
   .page--eval .ttl { font-size: 1.9em; }
@@ -563,8 +565,6 @@
 @media (max-height: 620px) {
   .pg-en { display: none; }
   .page:is(.page--work, .page--eval) .page__inner { gap: 0.5em; }
-  .jb-name { font-size: 1.3em; letter-spacing: 0.1em; }
-  .jb-name .ln { padding: 0.45em 0.4em; }
   .think__photo { width: 6.4em; }
   .page.page--job .page__inner { gap: 0.55em; }
   .think { margin-block: 0; }
