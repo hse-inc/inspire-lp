@@ -57,7 +57,7 @@
   };
   window.__go = go;
 
-  let locked = false, lastWheel = 0, fresh = true;
+  let locked = false, lastWheel = 0, lastDy = 0, fresh = true;
   const insideScroll = (target, dy) => {
     const pg = target.closest && target.closest('.page--scroll');
     const box = pg && pg.querySelector('.page__inner');
@@ -74,13 +74,18 @@
     if (inside === 'scroll') return;
     e.preventDefault();
     const now = performance.now();
+    const dy = e.deltaY, ad = Math.abs(dy), prev = Math.abs(lastDy);
     if (now - lastWheel > 250) fresh = true;
+    else if (ad >= 4 && Math.sign(dy) !== Math.sign(lastDy)) fresh = true;
+    else if (ad >= 15 && ad > prev * 1.6 + 4) fresh = true;
     lastWheel = now;
-    if (inside === 'hold' || locked || !fresh || Math.abs(e.deltaY) < 4) return;
+    lastDy = dy;
+    if (locked) { fresh = false; return; }
+    if (inside === 'hold' || !fresh || ad < 4) return;
     fresh = false;
     locked = true;
-    go(current + (e.deltaY > 0 ? 1 : -1));
-    setTimeout(() => { locked = false; }, 800);
+    go(current + (dy > 0 ? 1 : -1));
+    setTimeout(() => { locked = false; }, 600);
   }, { passive: false });
 
   let tY = null, tAtEnd = false, tAtTop = false, tBox = null;
