@@ -354,7 +354,7 @@
 
 .j2-job .ln { background: var(--color-orange); }
 .jb-name .ln { background: var(--color-navy); }
-.j2-hi { color: var(--color-orange); }
+.j2-hi, .jb-hi { color: var(--color-orange); }
 
 .j2-quote { position: relative; padding: 0.35em 0; font-family: var(--font-head); font-weight: 800; font-size: 1.4em; line-height: 1.4; text-align: center; color: var(--color-on-dark); }
 .j2-quote::before, .j2-quote::after { content: ""; position: absolute; left: 0; right: 0; height: 1px; background: var(--color-on-dark-line); scale: 0 1; transition: scale 0.8s var(--ease-out) 0.2s; }
