@@ -58,10 +58,22 @@
     pages[i].scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
+  const insideScroll = (target, dy) => {
+    const pg = target.closest && target.closest('.page--scroll');
+    const box = pg && pg.querySelector('.page__inner');
+    if (!box) return null;
+    const now = performance.now();
+    const can = dy > 0 ? box.scrollTop + box.clientHeight < box.scrollHeight - 1 : box.scrollTop > 0;
+    if (can) { box.__t = now; return 'scroll'; }
+    if (box.__t && now - box.__t < 450) return 'hold';
+    return null;
+  };
+
   let locked = false, lastWheel = 0, lastDy = 0, fresh = true;
   window.addEventListener('wheel', (e) => {
     if (e.ctrlKey) return;
-    if (e.target.closest && e.target.closest('textarea')) return;
+    const inside = insideScroll(e.target, e.deltaY);
+    if (inside === 'scroll') return;
     e.preventDefault();
     const now = performance.now();
     const dy = e.deltaY, ad = Math.abs(dy), prev = Math.abs(lastDy);
@@ -71,12 +83,29 @@
     lastWheel = now;
     lastDy = dy;
     if (locked) { fresh = false; return; }
-    if (!fresh || ad < 4) return;
+    if (inside === 'hold' || !fresh || ad < 4) return;
     fresh = false;
     locked = true;
     go(current + (dy > 0 ? 1 : -1));
     setTimeout(() => { locked = false; }, 600);
   }, { passive: false });
+
+  let tY = null, tAtEnd = false, tAtTop = false, tBox = null;
+  window.addEventListener('touchstart', (e) => {
+    const pg = e.target.closest && e.target.closest('.page--scroll');
+    tBox = pg && pg.querySelector('.page__inner');
+    if (!tBox) { tY = null; return; }
+    tY = e.touches[0].clientY;
+    tAtEnd = tBox.scrollTop + tBox.clientHeight >= tBox.scrollHeight - 2;
+    tAtTop = tBox.scrollTop <= 1;
+  }, { passive: true });
+  window.addEventListener('touchend', (e) => {
+    if (tY === null || !tBox) return;
+    const dy = e.changedTouches[0].clientY - tY;
+    if (dy < -50 && tAtEnd && tBox.scrollTop + tBox.clientHeight >= tBox.scrollHeight - 2) go(current + 1);
+    else if (dy > 50 && tAtTop && tBox.scrollTop <= 1) go(current - 1);
+    tY = null;
+  }, { passive: true });
 
   window.addEventListener('keydown', (e) => {
     if (e.target.closest('input, textarea, select, button')) return;
