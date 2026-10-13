@@ -278,6 +278,8 @@
 .voices { display: grid; grid-template-columns: 1fr; gap: 0.4em; align-items: end; margin: 0; }
 .voice { position: relative; display: flex; align-items: flex-end; gap: 8px; margin: 0; opacity: 0; transition: opacity 0.35s ease; }
 .voice.is-on { opacity: 1; }
+
+.page--empathy .voice:first-child { margin-right: 30%; }
 .voice:nth-child(2) { margin-left: 2.4em; }
 .voice:nth-child(3) { margin-left: 4.8em; }
 .voice::before {
