@@ -491,7 +491,7 @@
 .req__tab.is-on { color: var(--color-on-dark); background: var(--color-navy); }
 .req[data-tab="1"] .t2, .req[data-tab="2"] .t1 { display: none; }
 .req__list { display: grid; margin: 0; }
-.req__list .row { display: grid; grid-template-columns: max-content 1fr; gap: 0.9em; padding: 0.8em 0; border-top: 1px solid var(--color-line); }
+.req__list .row { display: grid; grid-template-columns: max(5.6em, 74px) 1fr;    gap: 0.9em; padding: 0.8em 0; border-top: 1px solid var(--color-line); }
 .req__list .row:last-child { border-bottom: 1px solid var(--color-line); }
 .req__list dt { position: relative; padding-left: 0.8em; white-space: nowrap; font-weight: 700; font-size: max(13px, 0.95em); line-height: 1.6; color: var(--color-navy); }
 .req__list dt::before { content: ""; position: absolute; left: 0; top: 0.35em; width: 3px; height: 1em; background: var(--color-orange); border-radius: 2px; }
