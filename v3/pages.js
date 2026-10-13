@@ -7,6 +7,18 @@
     }));
   });
 
+  document.querySelectorAll('.dots').forEach((el) => {
+    const chars = [...el.textContent];
+    el.textContent = '';
+    chars.forEach((c, k) => {
+      const sp = document.createElement('span');
+      sp.className = 'dc';
+      sp.style.setProperty('--k', k);
+      sp.textContent = c;
+      el.appendChild(sp);
+    });
+  });
+
   const form = document.getElementById('entry-form');
   if (!form) return;
   const msg = form.querySelector('.entry__msg');

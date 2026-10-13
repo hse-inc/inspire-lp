@@ -65,7 +65,11 @@
   transition: background-size 0.9s var(--ease-out) 0.35s;
 }
 .ln.is-on .mk { background-size: 100% 100%; }
-.dots { text-emphasis: filled dot var(--color-orange); -webkit-text-emphasis: filled dot var(--color-orange); text-emphasis-position: over right; }
+
+.dots { font-weight: 700; color: var(--color-navy); }
+.dc { position: relative; }
+.dc::before { content: ""; position: absolute; left: 50%; top: -0.08em; width: 0.3em; height: 0.3em; margin-left: -0.15em; border-radius: 50%; background: var(--color-orange); scale: 0; transition: scale 0.4s var(--ease-spring); transition-delay: calc(var(--k) * 45ms + 0.35s); }
+.is-on .dc::before { scale: 1; }
 
 .page.page--work {
   --g-area: var(--color-blue-soft);
