@@ -520,7 +520,6 @@
 .entry__l { font-weight: 700; font-size: max(13px, 0.95em); line-height: 1.5; color: var(--color-navy); }
 .entry__l b { font-weight: 700; color: var(--color-orange-deep); }
 .entry__l b.is-opt { color: var(--color-ink-soft); }
-.entry__hint { display: block; margin-top: 0.2em; font-weight: 500; font-size: 13px; line-height: 1.55; color: var(--color-ink-soft); }
 .entry input, .entry textarea, .entry select {
   width: 100%;
   max-width: 100%;
